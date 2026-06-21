@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 持续关注的产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf9;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Helvetica, Arial, sans-serif;
+            color: #1e1e1e;
+            line-height: 1.6;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* hero / 标题区域 */
+        .page-hero {
+            margin-top: 1.2rem;
+            margin-bottom: 3.2rem;
+        }
+
+        .page-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #171717;
+            border-left: 5px solid #3b7a57;
+            padding-left: 1.2rem;
+        }
+
+        .page-hero p {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #4b5563;
+            max-width: 600px;
+        }
+
+        /* 节标题 */
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 520;
+            margin-top: 2.8rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.01em;
+            color: #1f2937;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.25rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2d2d2d;
+        }
+
+        /* 卡片式特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 1.5rem 1.2rem;
+            border-radius: 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+            transition: box-shadow 0.1s ease, transform 0.1s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+            transform: translateY(-1px);
+        }
+
+        .feature-card .emoji-icon {
+            font-size: 1.6rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.05rem;
+            font-weight: 550;
+            margin: 0.25rem 0 0.3rem 0;
+            color: #1e293b;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 0;
+        }
+
+        /* 场景说明卡片 */
+        .use-case {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 1.8rem;
+            margin: 1.6rem 0;
+            border: 1px solid #eaeaea;
+        }
+
+        .use-case p {
+            margin-bottom: 0.6rem;
+        }
+
+        /* 引用、提示 */
+        .note-box {
+            background: #f3f4f6;
+            padding: 1.4rem 1.6rem;
+            border-radius: 12px;
+            margin: 1.8rem 0;
+            color: #2d3a4a;
+            font-size: 0.95rem;
+        }
+
+        .faq-snippet {
+            background: transparent;
+            border-left: 3px solid #a3b8c0;
+            padding-left: 1.2rem;
+            margin: 1.2rem 0;
+        }
+
+        .faq-snippet strong {
+            font-weight: 580;
+        }
+
+        a {
+            color: #226644;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            transition: color 0.1s;
+        }
+
+        a:hover {
+            color: #124a2e;
+        }
+
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dcdcdc;
+            font-size: 0.9rem;
+            color: #4b5563;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.2rem;
+        }
+
+        .footer-links span {
+            color: #6b7280;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 2.2rem 0 1rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 560px) {
+            body {
+                padding: 1.8rem 1rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+                padding-left: 1rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .use-case {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- hero 区域：再次访问的纽带 -->
+        <div class="page-hero">
+            <h1>再次驻足 · 华体会</h1>
+            <p>有些站点，值得你放进书签，偶尔回来看看。<br>华体会就是这样一个保持质感、持续更新的地方。</p>
+        </div>
+
+        <!-- 简短摘要：产品身份说明 -->
+        <section>
+            <h2>一份简要的产品说明</h2>
+            <p><a href="https://mainm-hth.com.cn">华体会</a>并非一次性浏览页面，而是一个你可能会反复使用的轻量服务。它聚焦在信息聚合与日常触达上，没有复杂的层级，打开即用。从去年开始，我们保持每月两次的迭代节奏，修复细节，调整内容结构，让每一次访问都略微不同。</p>
+            <p>如果你之前来过，可能会发现首页的摘要区更紧凑了。如果你是新访客，这里没有铺满的弹窗或注册墙——只有你需要的模块。</p>
+        </section>
+
+        <!-- 亮点 / 特点 -->
+        <section>
+            <h2>为什么值得收藏</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="emoji-icon">📌</span>
+                    <h4>低干扰界面</h4>
+                    <p>没有自动播放的媒体或冗余的推荐区，正文区占版面70%以上。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="emoji-icon">🔄</span>
+                    <h4>频率恰当的内容</h4>
+                    <p>每两周左右更新一次精选摘要，不制造信息轰炸，但保持新鲜感。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="emoji-icon">⚙️</span>
+                    <h4>功能颗粒度细</h4>
+                    <p>常用操作（如搜索、跳转、收藏）均可在两三次点击内完成。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="emoji-icon">📱</span>
+                    <h4>响应适配</h4>
+                    <p>在手机和桌面端同样克制，字号和间距经多次调整，不伤眼。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用建议 / 场景 -->
+        <section>
+            <h2>使用建议 · 持续关注的姿势</h2>
+
+            <div class="use-case">
+                <p><strong>🔖 作为收藏夹常驻项</strong><br>
+                将 <a href="https://mainm-hth.com.cn">华体会</a> 添加到书签栏（而非文件夹深层），每周打开一两次，快速浏览更新要点。因为页面体积小（通常 < 200 KB），加载极快，适合碎片时间扫读。</p>
+            </div>
+
+            <div class="use-case">
+                <p><strong>📆 标记“每月回访日”</strong><br>
+                如果你习惯周期性阅读，可以设定每月1号或15号打开一次。我们观察到，间隔两周以上的回访者更容易注意到内容变化，且不会产生疲惫感。</p>
+            </div>
+
+            <div class="use-case">
+                <p><strong>🔔 轻度订阅心态</strong><br>
+                不需要时刻关注。如果某次打开发现没有任何更新，那说明我们正在打磨下一轮内容。这种留白本身也是一种节奏。</p>
+            </div>
+        </section>
+
+        <!-- 可信但克制的访问说明 / 提示 -->
+        <section>
+            <h2>一些平实的提示</h2>
+            <div class="note-box">
+                <p>▪ 本站使用标准 HTTPS 连接，无第三方追踪脚本。页面不含广告模块或自动跳转链接。<br>
+                ▪ 所有外部链接均指向 <strong>mainm-hth.com.cn</strong> 域名下的内容，没有重定向陷阱。<br>
+                ▪ 建议使用主流浏览器（Chrome / Edge / Safari 最近两个大版本）访问，以获得最佳字体渲染与布局效果。<br>
+                ▪ 如果你发现某天页面打不开，可能是网络波动或短暂的服务器维护——通常会在几个小时内恢复。可以稍后再试。</p>
+            </div>
+        </section>
+
+        <!-- FAQ 摘要（简洁） -->
+        <section>
+            <h2>常见疑问摘要</h2>
+            <div class="faq-snippet">
+                <p><strong>问：需要注册或登录吗？</strong><br>完全不需要。华体会当前版本为公开只读模式，无需任何账户。</p>
+            </div>
+            <div class="faq-snippet">
+                <p><strong>问：内容有 RSS 或邮件更新吗？</strong><br>目前没有，但我们正在评估一种轻量通知方式。你可以通过直接收藏页面来跟进。</p>
+            </div>
+            <div class="faq-snippet">
+                <p><strong>问：我会在这里看到用户生成内容吗？</strong><br>不会。所有内容均由内部编辑整理，不开放评论区或投稿，确保信息干净统一。</p>
+            </div>
+        </section>
+
+        <!-- 再次强调链接，自然嵌入句子 -->
+        <hr>
+        <p style="font-size: 1rem; color: #333;"><strong>如果你喜欢这种安静的更新节奏</strong>，可以随时把 <a href="https://mainm-hth.com.cn">华体会</a> 加入浏览器书签或手机主屏幕。我们不会频繁打扰你，但每次打开，都值得你停留两分钟。</p>
+
+        <!-- footer 辅助信息 -->
+        <div class="footer-links">
+            <span>© 持续关注 · 华体会</span>
+            <span>·</span>
+            <a href="https://mainm-hth.com.cn" style="text-decoration: none; color: #226644; font-weight: 470;">华体会</a>
+            <span>· 迭代记录 v2.3</span>
+        </div>
+
+    </div>
+</body>
+</html>
