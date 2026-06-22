@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳客 · 轻量导航介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2a3a;
+            background-color: #f7f9fc;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 80%);
+            padding: 3rem 1.5rem 2.8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 30% 50%, rgba(56, 178, 172, 0.08), transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            color: #e2e8f0;
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .sub {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 顶部导航（简洁内嵌） */
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8rem 2.5rem;
+            padding: 0.9rem 1rem 1.2rem;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .top-nav a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .top-nav a:hover {
+            color: #0d6e6b;
+            border-bottom-color: #38b2ac;
+        }
+
+        /* 浅色正文区容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.2rem 1.5rem 3rem;
+        }
+
+        /* 卡片风格 */
+        .intro-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0,0,0,0.02);
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+
+        .intro-card p {
+            color: #334155;
+            margin-bottom: 0.9rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #0e7c78;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0b5e5b;
+        }
+
+        /* 三个场景模块 */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .scene-item {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 1.5rem 1.8rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid #edf2f7;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .scene-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -8px rgba(15, 23, 42, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .scene-item h3 {
+            font-size: 1.25rem;
+            font-weight: 550;
+            color: #0f172a;
+            margin-bottom: 0.4rem;
+        }
+
+        .scene-item .icon-emoji {
+            font-size: 1.7rem;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+        }
+
+        .scene-item p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* 常见说明摘要 */
+        .faq-preview {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 2rem 2rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9edf3;
+            margin: 2.2rem 0 1.2rem;
+        }
+
+        .faq-preview h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            color: #1e293b;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item span {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* 提示性引导 */
+        .note-box {
+            background: #edf7f6;
+            border-left: 4px solid #38b2ac;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.8rem 0 1rem;
+            color: #1e3a3a;
+        }
+
+        .note-box p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .footer-note a {
+            color: #0e7c78;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero .sub {
+                font-size: 0.9rem;
+            }
+            .top-nav {
+                gap: 1rem 1.5rem;
+                font-size: 0.85rem;
+                padding: 0.7rem 0.5rem 0.9rem;
+            }
+            .intro-card {
+                padding: 1.5rem 1.2rem;
+            }
+            .scenes-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-preview {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 -->
+<header class="hero">
+    <h1>澳客 · 轻量导航</h1>
+    <div class="sub">围绕数据与内容的实用入口，让浏览更聚焦、路径更清晰。</div>
+</header>
+
+<!-- 顶部导航 -->
+<nav class="top-nav">
+    <a href="#intro">站点印象</a>
+    <a href="#scenes">常见场景</a>
+    <a href="#faq">快速说明</a>
+    <a href="https://en-okooo.com" target="_blank" rel="noopener noreferrer">澳客</a>
+</nav>
+
+<main class="container">
+
+    <!-- 核心介绍 -->
+    <section id="intro" class="intro-card">
+        <h2>关于这里</h2>
+        <p>如果你常在信息流里寻找体育赛事、数据动态或相关内容，<a href="https://en-okooo.com" target="_blank" rel="noopener noreferrer">澳客</a>是一个值得熟悉的网站。它并不是一个单一的资讯页面，而是聚合了比赛数据、球队统计、赛程分析等多个维度的信息节点。</p>
+        <p>很多长期关注体育的朋友，会把它当作日常浏览的起点之一——从赛前赔率到赛后技术统计，都能够在同一个框架下快速切换。简洁的界面减少了干扰，也让内容的可读性更高。</p>
+        <p>下面的几个场景，或许能帮你理解它在你自己的使用习惯里可以扮演什么角色。</p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section id="scenes">
+        <div class="scenes-grid">
+            <div class="scene-item">
+                <div class="icon-emoji">📊</div>
+                <h3>赛前数据分析</h3>
+                <p>比赛还未开始，先看两队近期状态、交锋记录、阵容变化。澳客提供分项数据对比，方便快速形成自己的判断框架。</p>
+            </div>
+            <div class="scene-item">
+                <div class="icon-emoji">📅</div>
+                <h3>赛程与结果追踪</h3>
+                <p>一周有哪些焦点战？实时比分、红黄牌、换人调整，在同一个页面里就能跟进，不用在多个平台之间来回跳转。</p>
+            </div>
+            <div class="scene-item">
+                <div class="icon-emoji">🔍</div>
+                <h3>球队 / 联赛档案</h3>
+                <p>想了解某支球队的完整赛季表现，或者某个联赛的整体格局？通过分类入口可以深入到具体的统计页面，信息层级比较清晰。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <section id="faq" class="faq-preview">
+        <h3>📌 常见说明</h3>
+        <div class="faq-item">
+            <strong>内容更新频率？</strong>
+            <span>比赛数据随赛程实时更新，赛前赔率、阵容信息通常在赛前数小时至一天内发布。</span>
+        </div>
+        <div class="faq-item">
+            <strong>是否需要注册？</strong>
+            <span>大部分浏览功能无需注册即可使用，部分个性化设置或收藏功能可能需要创建账号。</span>
+        </div>
+        <div class="faq-item">
+            <strong>移动端体验如何？</strong>
+            <span>页面适配主流手机浏览器，关键数据表格和导航都做了响应式调整，竖屏横屏均可正常查看。</span>
+        </div>
+        <div class="faq-item">
+            <strong>数据来源可靠吗？</strong>
+            <span>平台与多家数据服务商对接，历史数据可回溯，统计口径在页面内通常有标注说明。</span>
+        </div>
+    </section>
+
+    <!-- 说明提示块 -->
+    <div class="note-box">
+        <p>💡 如果你对某个联赛或球队有持续关注的需求，可以试一试从<a href="https://en-okooo.com" target="_blank" rel="noopener noreferrer">澳客</a>首页的导航栏进入对应分类，收藏常用页面会让后续访问更顺手。</p>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        内容仅供参考 · 浏览体验各有偏好 · <a href="https://en-okooo.com" target="_blank" rel="noopener noreferrer">澳客</a>
+    </div>
+
+</main>
+</body>
+</html>
